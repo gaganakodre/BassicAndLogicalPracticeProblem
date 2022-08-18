@@ -24,16 +24,17 @@ def flip_fun(number_of_flips_):
                 tail += 1
             head_percentage = head * 100 / number_of_flips_
             tail_percentage = tail * 100 / number_of_flips_
-        logging.debug('Head percentage: {} '.format(head_percentage))
-        logging.debug('tail percentage: {} '.format(tail_percentage))
+            logging.debug('Head percentage: {} '.format(head_percentage))
+            logging.debug('tail percentage: {} '.format(tail_percentage))
         # print('tail percentage', tail_percentage)
     except Exception as e:
-        print(e)
+        logging.exception(e)
     finally:
         print("closed")
 
 
-print(flip_fun.__doc__)
+# print(flip_fun.__doc__)
 if __name__ == '__main__':
     number_of_flips = int(input("enter the number of times you want to flip "))
     flip_fun(number_of_flips)
+    help(flip_fun)

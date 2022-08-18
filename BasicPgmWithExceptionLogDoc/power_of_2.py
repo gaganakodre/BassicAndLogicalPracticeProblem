@@ -19,13 +19,14 @@ def power_of_two(number_):
             x += 1
             logging.debug('the values : {} '.format(math.pow(2, x)))
     except Exception as e:
-        print(e)
+        logging.error(e)
     finally:
         print("closed")
 
 
-print(power_of_two.__doc__)
+# print(power_of_two.__doc__)
 if __name__ == '__main__':
     number = int(input("enter th power of 2 number You want to find "))
     power_of_two(number)
+    help(power_of_two)
 

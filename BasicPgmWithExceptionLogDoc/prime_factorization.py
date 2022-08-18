@@ -13,14 +13,14 @@ def prime_factor(number_):
             if number_ % i == 0:
                 logging.debug('prime factors: {}'.format(i))
 
-        return i
     except Exception as e:
-        print(e)
+        logging.exception(e)
     finally:
         print("closed")
 
 
-print(prime_factor.__doc__)
+# print(prime_factor.__doc__)
 if __name__ == '__main__':
     number = int(input("enter the number you want to find the prime factors "))
     prime_factor(number)
+    help(prime_factor)
