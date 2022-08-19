@@ -5,15 +5,22 @@ def swap(ch, i, j):
 
 
 def permutations(ch, curr_index=0):
-    if curr_index == len(ch) - 1:
-        print(''.join(ch))
+    """
+    Function to perform the permutation
+    """
+    try:
+        if curr_index == len(ch) - 1:
+            print(''.join(ch))
 
-    for i in range(curr_index, len(ch)):
-        swap(ch, curr_index, i)
-        permutations(ch, curr_index + 1)
-        swap(ch, curr_index, i)
+        for i in range(curr_index, len(ch)):
+            swap(ch, curr_index, i)
+            permutations(ch, curr_index + 1)
+            swap(ch, curr_index, i)
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':
     s = 'ABC'
     permutations(list(s))
+
